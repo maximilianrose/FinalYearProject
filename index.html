@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Max's Vehicle Rental</title>
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Max's Vehicle Rental</h1>
+
+  
+
+  <br>
+
+
+
+</header>
+
+
+<div>
+<h2 class = "loginlink"> <a href="loginscreen.html">Log In/Register</a></h2>
+
+</div>
+
+<main class="tab_container">
+  
+ 
+  <input id="tab1" type="radio" name="tabs" checked>
+  
+  <label for="tab1"  class= "navigation"><i class="fa fa-car"></i><span>Cars </span></label>
+
+  <input id="tab2" type="radio" name="tabs">
+  <label for="tab2"   class= "navigation" ><i class="fa fa-motorcycle"></i><span>Motorcycles</span></label>
+
+  <input id="tab3" type="radio" name="tabs">
+  <label for="tab3"    class = "navigation" ><i class="fa fa-truck"></i><span>Vans</span></label>
+
+<input id="tab4" type="radio" name="tabs">
+  <label for="tab4"    class= "navigation" ><i class="fa fa-bicycle"></i><span>Bikes</span></label>
+
+
+  
+
+  <!--content for tab 1-->
+  <section id="content1" class="tab-content">
+    <h2> Find Cars</h2>
+
+<div>
+<form action="searchcheck.php" method="get">
+       <label class = "selectTag"> Location </label>
+  <select name="Site">
+    <option value="any">Any</option>
+    <option value="leicester">Leicester</option>
+    <option value="derby">Derby</option>
+    <option value="nottingham">Nottingham</option>
+    
+  </select><br>
+
+
+    
+     
+<label class = "selectTag"> Make </label>
+  <select name="Make">
+    <option value="any">Any</option>
+    <option value="hyundai">Hyundai</option>
+    <option value="subaru">Subaru</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+   <option value="honda">Honda</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="lexus">Lexus</option>
+    <option value="kia">KIA</option>
+    <option value="suzuki">suzuki</option>
+    <option value="toyota">Toyota</option>
+    <option value="seat">SEAT</option>
+
+
+
+  </select>
+  <br>
+  <input type="submit">
+
+      
+       <label class = "selectTag"> Size </label>
+  <select name="size">
+    <option value="any">Any</option>
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+    
+
+  </select>
+
+<br>
+
+<label class = "selectTag"> Number of seats </label>
+  <select name="seats">
+    <option value="any">Any</option>
+    <option value="small">2</option>
+    <option value="medium">3</option>
+    <option value="large">5</option>
+    <option value="small">7+</option>
+
+  </select>
+
+  <br>
+
+<label class = "selectTag"> Category </label>
+  <select name="category">
+    <option value="any">Any</option>
+    <option value="small">Sports</option>
+    <option value="small economy">Small Economy</option>
+    <option value="Family">Family</option>
+    <option value="Luxury">Luxury</option>
+
+  </select>
+  <br>
+  <br>
+
+
+<label><b>Start Date</b></label><br>
+
+    <input type="date"  name="carstart" required> <br>
+
+
+    <label><b>End Date</b></label><br>
+
+    <input type="date"  name="carend" required> <br>
+
+
+<button class = "search" type="submit">Search</button><br>
+
+
+
+</form>
+
+
+  </div>
+
+
+
+
+
+
+
+
+  </section>
+
+  <!--content for tab 2-->
+  <section id="content2" class="tab-content">
+    <h2>Find Motorcycles </h2>
+  
+<div>
+
+<form action="searchcheck.php" method="get">
+       <label class = "selectTag"> Location </label>
+  <select name="Site">
+    <option value="leicester">Any</option>
+    <option value="leicester">Leicester</option>
+    <option value="derby">Derby</option>
+    <option value="nottingham">Nottingham</option>
+    
+  </select>
+  <br>
+
+
+
+       <label class = "selectTag"> Make </label>
+  <select name="Make">
+    <option value="any">Any</option>
+    <option value="ducati">Ducati</option>
+    <option value="honda">Honda</option>
+    <option value="kawasaki">Kawasaki</option>
+    <option value="peugeot">Peugeot</option>
+    <option value="piaggio">Piaggio</option>
+    <option value="suzuki">Suzuki</option>
+    <option value="triumph">Triumph</option>
+    <option value="yamaha">Yamaha</option>
+
+
+  </select>
+<br>
+
+ <label class = "selectTag"> Engine Size </label>
+  <select name="engine">
+    <option value="any">Any</option>
+    <option value="lessthan100"> &lt; 100cc   </option>
+    <option value="124-150">125-150cc </option>
+    <option value="151-250">151-250cc</option>
+    <option value="251-400"> 251-400cc  </option>
+    <option value="401-650">401-650cc</option>
+    <option value="651-999">651-999cc</option>
+    <option value="1000-1500">1000-1500cc</option>
+    <option value="morethan1500">1500+</option>
+
+
+  </select>
+
+<label class = "selectTag"> Category </label>
+  <select name="engine">
+    <option value="any"> Any  </option>
+    <option value="custom cruiser">Customer Cruiser</option>
+    <option value="dual-sport"> Dual-Sport  </option>
+    <option value="enduro">Enduro</option>
+    <option value="scooter">Scooter</option>
+    <option value="sports">Sports</option>
+    <option value="sports-touring"> Sports-Touring</option>
+
+    
+    
+    
+    
+
+
+  </select>
+
+<br>
+<br>
+
+<label><b>Start Date</b></label><br>
+
+    <input type="date"  name="mbstart" required> <br>
+
+
+    <label><b>End Date</b></label><br>
+
+    <input type="date"  name="mbend" required> <br>
+
+
+
+<button class = "search" type="submit">Search</button><br>
+
+</form>
+
+  </div>
+
+
+
+  </section>
+
+  <!--content for tab 3-->
+  <section id="content3" class="tab-content">
+    <h2>Find Vans</h2>
+
+    <div>
+<form action="searchcheck.php" method="get">
+       <label class = "selectTag"> Location </label>
+  <select name="Site">
+    <option value="any">Any</option>
+    <option value="leicester">Leicester</option>
+    <option value="derby">Derby</option>
+    <option value="nottingham">Nottingham</option>
+    
+  </select><br>
+
+
+    
+     
+<label class = "selectTag"> Make </label>
+  <select name="Make">
+    <option value="any">Any</option>
+    <option value="ford">Ford</option>
+    <option value="renault">Renault</option>
+    <option value="citroen">Citroen</option>
+    
+
+
+
+  </select>
+  <br>
+  <input type="submit">
+
+      
+       <label class = "selectTag"> Storage Capacity </label>
+  <select name="size">
+    <option value="any">Any</option>
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+
+
+    
+    
+
+  </select>
+
+<br>
+
+<label><b>Start Date</b></label><br>
+
+    <input type="date"  name="vanstart" required> <br>
+
+
+    <label><b>End Date</b></label><br>
+
+    <input type="date"  name="vanend" required> <br>
+
+
+<button class = "search" type="submit">Search</button><br>
+
+</form>
+
+
+
+    </div>
+
+  
+     
+  </section>
+
+
+  <section id="content4" class="tab-content">
+    <h2>Find Bikes</h2>
+
+<div>
+<form action="searchcheck.php" method="get">
+       <label class = "selectTag"> Location </label>
+  <select name="Site">
+    <option value="any">Any</option>
+    <option value="leicester">Leicester</option>
+    <option value="derby">Derby</option>
+    <option value="nottingham">Nottingham</option>
+    
+  </select><br>
+
+
+    
+     
+<label class = "selectTag"> Category </label>
+  <select name="Make">
+    <option value="mountain">Mountain</option>
+    <option value="road">Road</option>
+    <option value="bmx">BMX</option>
+    
+    
+
+
+
+  </select>
+  <br>
+
+
+<label><b>Start Date</b></label><br>
+
+    <input type="date"  name="bikestart" required> <br>
+
+
+    <label><b>End Date</b></label><br>
+
+    <input type="date"  name="bikeend" required> <br>
+
+
+
+
+
+
+
+
+  <button class = "search" type="submit">Search</button><br>
+
+      
+    
+
+</form>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+     
+     
+  </section>
+
+
+
+</main>
+
+<footer>
+  
+</footer>
+
+</body>
+</html>
