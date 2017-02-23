@@ -10,27 +10,31 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$username=$_POST['username']; 
-$password=$_POST['password'];
+// $username=$_POST['username']; 
+// $password=$_POST['password'];
 
 
-
-$sql = "SELECT username, password FROM customer";
+$sql = "SELECT customerID, FIRSTNAME, SURNAME FROM customer WHERE FIRSTNAME = 'max'";
 $result = $conn->query($sql);
 
-$sql="SELECT * FROM customer WHERE username='$username' and password='$password'";
-$result=mysql_query($sql);
+
+
+while ($row = $result->fetch_assoc()) {
+    echo  "id: " . $row["customerID"] . " - Name: " . $row["FIRSTNAME"] . " " . $row["SURNAME"]; 
+    }
+exit();
 
 
 
+/*
+ if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "id: " . $row["customerID"] . " - Name: " . $row["FIRSTNAME"] . " " . $row["SURNAME"];
+    } 
+}
 
-// $count=mysql_num_rows($result);
-// If result matched $username and $password, table row must be 1 row
-// if ($count==1) {
-//    echo "Log in Successful! $count";
-// } else {
-  //  echo "Unsuccessful! $count";
-// }
+echo 'hello';
 
-ob_end_flush();
-?>
+ $conn->close();
+ */
