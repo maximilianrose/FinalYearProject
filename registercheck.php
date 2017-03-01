@@ -12,6 +12,30 @@ if ($conn->connect_error) {
 
 
 $username = $_POST['username'];
+$EMAIL= $_POST['email'];
+
+
+
+
+$sql = "SELECT USERNAME FROM customer WHERE USERNAME = '$username'";
+$result = $conn->query($sql);
+
+while ($row = $result->fetch_assoc()) {
+    echo  "username already taken, try again"; 
+    exit();
+    }
+
+
+    $sql = "SELECT USERNAME FROM customer WHERE EMAIL = '$EMAIL'";
+$result = $conn->query($sql);
+
+while ($row = $result->fetch_assoc()) {
+    echo  "Your entered Email address has already taken, try again"; 
+    exit();
+    }
+
+
+
 
 
 
@@ -39,7 +63,7 @@ if ($_POST['passwordregister']=== $_POST['passwordconfirm'])
  
  
 $sql = "INSERT INTO customer (customerID, USERNAME, FIRSTNAME, SURNAME, DATEOFBIRTH, EMAIL, CARLICENCE, MOTORCYCLELICENCE, PASSWORD )
-VALUES ('[DEFAULT]', '$username', '$_POST[firstname]', '$_POST[surname]','$_POST[dob]', '$_POST[email]', '$_POST[carlicence]', '$_POST[bikelicence]', '$hashed_password')";
+VALUES ('[DEFAULT]', '$username', '$_POST[firstname]', '$_POST[surname]','$_POST[dob]', '$EMAIL', '$_POST[carlicence]', '$_POST[bikelicence]', '$hashed_password')";
  
 
 if ($conn->query($sql) === TRUE) {
