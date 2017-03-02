@@ -30,10 +30,12 @@ while ($row = $result->fetch_assoc()) {
   if  (password_verify ($password, $row["PASSWORD"]))
 
   {
-     echo "login successful"; 
+     echo "login successful <br />\n"; 
 
      $_SESSION['storedusername'] = $_POST['username'];
      $_SESSION['storedID'] = $row['customerID'];
+
+     echo "<a href = index.php> Home </a> <br />\n" ;
   }
 
   else {

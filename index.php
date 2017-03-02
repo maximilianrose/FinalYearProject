@@ -20,9 +20,9 @@ session_start();
 
 if (isset($_SESSION['storedusername']))
 {
-$username = $_SESSION['storedusername'];
+$sessionusername = $_SESSION['storedusername'];
 
-echo "Hello $username";
+echo "Hello $sessionusername";
 }
 
 else

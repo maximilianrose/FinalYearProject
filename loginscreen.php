@@ -15,7 +15,41 @@
   
 </head>
 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "carhire";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
 
+
+
+
+
+
+session_start();
+
+if (isset($_SESSION['storedID']))
+{
+$sessionusername = $_SESSION['storedID'];
+
+
+}
+
+else
+{
+
+  echo "Not logged in";
+}
+
+
+
+?>
 
 <body> 
 
@@ -44,6 +78,10 @@
 
   <input id="tab2" type="radio" name="tabs">
   <label for="tab2"   class= "loginnavigation" ><i class="fa fa-clipboard"></i><span>Register</span></label>
+
+<input id="tab3" type="radio" name="tabs">
+  <label for="tab3"   class= "loginnavigation" ><i class="fa fa-clipboard"></i><span>Update Details</span></label>
+
 
 
   <section id="content1" class="tab-content">
@@ -133,6 +171,99 @@
 <label><b>Confirm Password</b></label>  <br>
 
  <input type="password" placeholder="Enter Password" name="passwordconfirm" required><br> 
+
+<button type="submit">Register</button> <br>
+
+
+</form>
+
+
+</div>
+
+
+
+
+  </section>
+
+
+
+  <section id="content3" class="tab-content">
+    <h2> Update Details</h2>
+
+<div>
+
+<?php
+
+
+$sql = "SELECT USERNAME,  FIRSTNAME , SURNAME, EMAIL, DATEOFBIRTH  FROM customer WHERE customerID = '$sessionusername'";
+$result = $conn->query($sql);
+
+
+if ($result->num_rows > 0) {
+
+while ($row = $result->fetch_assoc()) {
+
+  
+ 
+     $diplayusername = $row['USERNAME'];
+     $diplayfirstname = $row['FIRSTNAME'];
+     $diplaysurname = $row['SURNAME'];
+     $diplaydob = $row['DATEOFBIRTH'];
+     $email = $row['EMAIL'];
+     $displayemail = (string)$email;
+  
+
+}
+
+}
+
+?>
+
+
+
+<form class = "loginform" action="http://localhost/updateprofile.php" method="post">
+
+  
+    <label><b>Username</b></label><br>
+
+    <input type="text"    placeholder="Please be aware you cannot change your username" value=" <?php  echo $diplayusername; ?> " name="username" required> <br>
+
+ <label><b>First Name</b></label><br>
+
+    <input type="text" value="<?php echo$diplayfirstname; ?> " name="firstname" required> <br>
+
+    <label><b>Last Name</b></label><br>
+
+    <input type="text" value="<?php echo$diplaysurname; ?> " name="surname" required> <br>
+
+
+    <label><b> Confirm Date of Birth</b></label><br>
+
+    <input type="date"   value="<?php $displaydob; ?>"   name="dob" required> <br>
+ 
+ <label><b>Email Address</b></label>  <br>
+
+
+ <input type="email" value="<?php echo$displayemail; ?>" name="email" required><br> <br>
+
+
+
+
+
+<input type ="hidden" name = "carlicence" value = "0">
+<input type ="checkbox" name = "carlicence" value = "1"> I have a full car licence <br>
+
+<input type ="hidden" name = "bikelicence" value ="0">
+<input type ="checkbox" name = "bikelicence" value ="1"> I have a full motorcycle licence <br><br>
+
+
+ <label><b>Enter New Password</b></label>  <br>
+
+ <input type="password" placeholder="Enter new Password" name="passwordregister" required><br>
+
+<label><b> Confirm New Password</b></label>  <br>
+
+ <input type="password" placeholder="confirm new Password" name="passwordconfirm" required><br> 
 
 <button type="submit">Register</button> <br>
 
