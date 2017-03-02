@@ -80,17 +80,17 @@ else
 <div>
 <form action="carsearchcheck.php" method="post">
        <label class = "selectTag"> Location </label>
-  <select name="Site">
+  <select name="siteID">
     <option value="any">Any</option>
-    <option value="Leicester">Leicester</option>
-    <option value="Derby">Derby</option>
-    <option value="Nottingham">Nottingham</option>
+    <option value= 1>Leicester</option>
+    <option value= 2>Derby</option>
+    <option value= 3>Nottingham</option>
     
   </select><br>
 
 
     
-     
+    
 <label class = "selectTag"> Make </label>
   <select name="make" >
     <option value="IS NOT NULL">Any</option>
@@ -128,10 +128,10 @@ else
 <label class = "selectTag"> Number of seats </label>
   <select name="seats">
     <option value="any">Any</option>
-    <option value="small">2</option>
-    <option value="medium">3</option>
-    <option value="large">5</option>
-    <option value="small">7+</option>
+    <option value= 2>2</option>
+    <option value= 3 >3</option>
+    <option value= 5>5</option>
+    <option value= 7 >7</option>
 
   </select>
 

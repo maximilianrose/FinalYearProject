@@ -36,6 +36,8 @@ else
 }
 
  $make = $_POST['make'];
+ $seats =$_POST['seats'];
+ $siteID =$_POST['siteID'];
  $enddate=$_POST['carend'];
  $startdate=$_POST['carstart'];
  $carend = date_create("$enddate");
@@ -69,36 +71,70 @@ echo $diff->format(" you are booking for %R%a days");
 
 
 
-$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE MANUFACTURER = '$make' AND VEHICLETYPE = 'car' AND CURRENTLYBOOKED = '0'";
+$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE MANUFACTURER = '$make' AND SEATS = '$seats' AND siteID = '$siteID'  AND VEHICLETYPE = 'car' AND CURRENTLYBOOKED = '0'";
 $result = $conn->query($sql);
 
 
 
 if ($result->num_rows > 0) {
-    echo "<table><tr><th>MANUFACTURER </th><th>MODEL </th> <th> DAILYPRICE </th>  <th> Total Cost </th> <th> Book? </th>   </tr>";
+    echo "<table><tr> <th> start </th> <th> ID </th> <th>MANUFACTURER </th><th>MODEL </th> <th> DAILYPRICE </th>  <th> Total Cost </th> <th> Book? </th>   </tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
 
 $totalcost = $row["DAILYPRICE"]*$calculation;
 $vehicleID = $row['vehicleID'];
+$make = $row['MANUFACTURER'];
+$model = $row['MODEL'];
+$dailyprice =$row['DAILYPRICE'];
+$carID =$row['vehicleID'];
 
-        echo "<tr><td>".$row["MANUFACTURER"]."</td><td>".$row["MODEL"]."</td><td>".$row["DAILYPRICE"]."</td> <td>".$totalcost."</td> <td>
-        
-        
-        
-        <a href = booking.php> Book </a>  </td>  </tr>";
 
+
+        echo "<tr>
+      <td>  <form action='booking.php'  method='POST'> </td>
+       <td> <input type= 'hidden' name='vehicleID' readonly type='number' value= $carID>  </td> 
+        
+     <td> <input name='txtmake' readonly type='text' value= $make>  </td>
+      
+      
+        <td> <input name='txtmodel' readonly type='text' value= $model>  </td>
+        <td> <input name='dailyprice' type='number' readonly value= $dailyprice>  </td>
+         <td> <input name='totalcost' type='number' readonly value= $totalcost>  </td>
+         
+          <td>
+        
+        <input type='submit' value='Book'>
+        </form>
+           </td>  </tr>";
+
+/*<a href = booking.php> Book </a> */
+
+
+/* these two variables need updating depending on which row's' submit button is press  
 
 $_SESSION['storedvehicleID'] = $vehicleID;
-$_SESSION['cost'] = $totalcost;    
+$_SESSION['cost'] = $totalcost; 
+
+*/
+
+
+/* These Variables will stay the same, so don't change on submit */
 $_SESSION['start'] = $startdate;  
-$_SESSION['end'] = $enddate;  
+$_SESSION['end'] = $enddate; 
 
     }
     echo "</table>";
 } else {
     echo "0 results";
 }
+
+
+
+
+
+
+
+
 $conn->close();
 
 

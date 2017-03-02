@@ -80,9 +80,10 @@ else
   <label for="tab2"   class= "loginnavigation" ><i class="fa fa-clipboard"></i><span>Register</span></label>
 
 <input id="tab3" type="radio" name="tabs">
-  <label for="tab3"   class= "loginnavigation" ><i class="fa fa-clipboard"></i><span>Update Details</span></label>
+  <label for="tab3"   class= "loginnavigation" ><i class="fa fa-folder-open"></i><span>Update Details</span></label>
 
-
+<input id="tab4" type="radio" name="tabs">
+  <label for="tab4"   class= "loginnavigation" ><i class="fa fa-cut"></i><span> Delete account</span></label>
 
   <section id="content1" class="tab-content">
     <h2> Login</h2>
@@ -277,6 +278,36 @@ while ($row = $result->fetch_assoc()) {
 
 
   </section>
+
+
+<section id="content4" class="tab-content">
+    <h2> Delete account</h2>
+
+<div>
+
+<form class = "loginform" action="http://localhost/deleteaccount.php" method="post">
+
+  
+    
+
+  
+
+<button type="submit"> Delete Account</button> <br>
+
+
+</form>
+
+
+</div>
+
+
+
+
+  </section>
+
+
+
+
 
 </main>
 

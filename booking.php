@@ -22,11 +22,31 @@ if ($conn->connect_error) {
 
 session_start();
 
+$vehicleID = $_POST['vehicleID'];
+$totalcost = $_POST['totalcost'];
+
+
+$sql = "UPDATE vehicle SET CURRENTLYBOOKED = '1' WHERE vehicleID = $vehicleID";
+
+if ($conn->query($sql) === TRUE) {
+    
+
+
+
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+
+   
+
+}
+
+
+
 
 
 
 $sql = "INSERT INTO bookings (bookingID, customerID, vehicleID, STARTDATE, ENDDATE, TOTALDUE )
-VALUES ('[DEFAULT]', '$_SESSION[storedID]', '$_SESSION[storedvehicleID]', '$_SESSION[start]','$_SESSION[end]', '$_SESSION[cost]')";
+VALUES ('[DEFAULT]', '$_SESSION[storedID]', '$vehicleID', '$_SESSION[start]','$_SESSION[end]', '$totalcost')";
  
 
 if ($conn->query($sql) === TRUE) {

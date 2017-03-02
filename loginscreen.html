@@ -22,7 +22,7 @@
 <header>
   <h1> Please Log in or register your details  </h1>
 
-  <h2 class = "homelink"> <a href="index.html">Home</a> </h2>
+  <h2 class = "homelink"> <a href="http://localhost/index.php">Home</a> </h2>
 
   <br>
 
@@ -49,7 +49,7 @@
   <section id="content1" class="tab-content">
     <h2> Login</h2>
 
-<form class = "loginform" action="longincheck.php" method="post">
+<form class = "loginform" action="http://localhost/loginscript.php" method="post">
 
   
     <label><b>Username</b></label><br>
@@ -113,7 +113,17 @@
  <label><b>Email Address</b></label>  <br>
 
 
- <input type="email" placeholder="Email Address" name="email" required><br>
+ <input type="email" placeholder="Email Address" name="email" required><br> <br>
+
+
+
+
+
+<input type ="hidden" name = "carlicence" value = "0">
+<input type ="checkbox" name = "carlicence" value = "1"> I have a full car licence <br>
+
+<input type ="hidden" name = "bikelicence" value ="0">
+<input type ="checkbox" name = "bikelicence" value ="1"> I have a full motorcycle licence <br><br>
 
 
  <label><b>Desired Password</b></label>  <br>
