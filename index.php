@@ -220,15 +220,15 @@ echo "The time is " . date("h:ia");
 <br>
 
  <label class = "selectTag"> Engine Size Min </label>
-  <select name="engine">
+  <select name="enginemin">
     <option value="any">Any</option>
-    <option value="100"> 100cc   </option>
-    <option value="200">200 </option>
-    <option value="300">300</option>
-    <option value="400"> 400cc </option>
-    <option value="500">500cc</option>
-    <option value="600">600cc</option>
-    <option value="700">700cc</option>
+    <option value= 100> 100cc   </option>
+    <option value= 200>200 </option>
+    <option value= 300>300</option>
+    <option value= 400> 400cc </option>
+    <option value= 500>500cc</option>
+    <option value= 600>600cc</option>
+    <option value= 700>700cc</option>
 
 
 
@@ -237,23 +237,23 @@ echo "The time is " . date("h:ia");
 <br>
 
 <label class = "selectTag"> Engine Size Max </label>
-  <select name="engine">
+  <select name="enginemax">
     <option value="any">Any</option>
 
-    <option value="100"> &lt; 100cc   </option>
-    <option value="200"> 200cc</option>
-    <option value="300">300cc</option>
-    <option value="400"> 400cc </option>
-    <option value="500">500cc</option>
-    <option value="600">600cc</option>
-    <option value="700">700cc</option>
-    <option value="800"> 800cc </option>
-    <option value="900">900cc</option>
-    <option value="1000">1000cc</option>
-    <option value="1500">1500cc</option>
-    <option value="2000"> 2000cc </option>
-    <option value="2500">2500cc</option>
-    <option value="3000">3000cc</option>
+    <option value= 100> &lt; 100cc   </option>
+    <option value= 200> 200cc</option>
+    <option value= 300>300cc</option>
+    <option value= 400> 400cc </option>
+    <option value= 500>500cc</option>
+    <option value= 600>600cc</option>
+    <option value= 700>700cc</option>
+    <option value= 800> 800cc </option>
+    <option value= 900>900cc</option>
+    <option value= 1000>1000cc</option>
+    <option value= 1500>1500cc</option>
+    <option value= 2000> 2000cc </option>
+    <option value= 2500>2500cc</option>
+    <option value= 3000>3000cc</option>
     
 
 

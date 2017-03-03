@@ -92,7 +92,7 @@ echo $diff->format(" you are booking for %R%a days");
 
 
 
-$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE MANUFACTURER = '$make' AND  siteID = '$siteID'  AND VEHICLETYPE = 'motorcycle' AND not exists ( select * from bookings 
+$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE MANUFACTURER = '$make' AND  siteID = '$siteID' AND  ENGINESIZE BETWEEN '$_POST[enginemin]' AND '$_POST[enginemax]'  AND VEHICLETYPE = 'motorcycle' AND not exists ( select * from bookings 
 where vehicle.vehicleID = bookings.vehicleID AND STARTDATE < '$_POST[mbend]' AND ENDDATE > '$_POST[mbstart]') ";
 
 
