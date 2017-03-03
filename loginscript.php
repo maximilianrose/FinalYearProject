@@ -35,7 +35,7 @@ while ($row = $result->fetch_assoc()) {
      $_SESSION['storedusername'] = $_POST['username'];
      $_SESSION['storedID'] = $row['customerID'];
 
-     echo "<a href = index.php> Home </a> <br />\n" ;
+     echo "<a href = index.php> Home</a> <br />\n" ;
   }
 
   else {

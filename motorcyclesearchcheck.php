@@ -35,14 +35,14 @@ else
   die();
 }
 
- $make = $_POST['make'];
- $seats =$_POST['seats'];
- $siteID =$_POST['siteID'];
- $enddate=$_POST['carend'];
- $startdate=$_POST['carstart'];
- $carend = date_create("$enddate");
- $carstart = date_create("$startdate");
-$diff = date_diff($carstart, $carend);
+ $make = $_POST['bikemake'];
+ 
+ $siteID =$_POST['bikesiteID'];
+ $enddate=$_POST['mbend'];
+ $startdate=$_POST['mbstart'];
+ $bikeend = date_create("$enddate");
+ $bikestart = date_create("$startdate");
+$diff = date_diff($bikestart, $bikeend);
 
 
 date_default_timezone_set("Europe/London");
@@ -92,8 +92,8 @@ echo $diff->format(" you are booking for %R%a days");
 
 
 
-$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE MANUFACTURER = '$make' AND SEATS = '$seats' AND siteID = '$siteID'  AND VEHICLETYPE = 'car' AND not exists ( select * from bookings 
-where vehicle.vehicleID = bookings.vehicleID AND STARTDATE < '$_POST[carend]' AND ENDDATE > '$_POST[carstart]') ";
+$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE MANUFACTURER = '$make' AND  siteID = '$siteID'  AND VEHICLETYPE = 'motorcycle' AND not exists ( select * from bookings 
+where vehicle.vehicleID = bookings.vehicleID AND STARTDATE < '$_POST[mbend]' AND ENDDATE > '$_POST[mbstart]') ";
 
 
 $result = $conn->query($sql);

@@ -14,6 +14,14 @@ session_start();
 
 $customerID = $_SESSION['storedID'];
 
+if (!isset($_SESSION['storedID']))
+{
+
+header('location:http://localhost/loginscreen.php');
+sleep(1);
+
+}
+
 
 
    

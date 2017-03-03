@@ -38,6 +38,10 @@ if (isset($_SESSION['storedID']))
 {
 $sessionusername = $_SESSION['storedID'];
 
+$displaylogname = $_SESSION['storedusername'];
+echo "Hello $displaylogname <br />\n";
+
+echo "<a href = logout.php> Logout</a> <br />\n" ;
 
 }
 
@@ -206,10 +210,10 @@ while ($row = $result->fetch_assoc()) {
 
   
  
-     $diplayusername = $row['USERNAME'];
-     $diplayfirstname = $row['FIRSTNAME'];
-     $diplaysurname = $row['SURNAME'];
-     $diplaydob = $row['DATEOFBIRTH'];
+     $displayusername = $row['USERNAME'];
+     $displayfirstname = $row['FIRSTNAME'];
+     $displaysurname = $row['SURNAME'];
+     $displaydob = $row['DATEOFBIRTH'];
      $email = $row['EMAIL'];
      $displayemail = (string)$email;
   
@@ -227,15 +231,15 @@ while ($row = $result->fetch_assoc()) {
   
     <label><b>Username</b></label><br>
 
-    <input type="text"    placeholder="Please be aware you cannot change your username" value=" <?php  echo $diplayusername; ?> " name="username" required> <br>
+    <input type="text"    placeholder="Please be aware you cannot change your username" value=" <?php  echo $displayusername; ?> " name="username" required> <br>
 
  <label><b>First Name</b></label><br>
 
-    <input type="text" value="<?php echo$diplayfirstname; ?> " name="firstname" required> <br>
+    <input type="text" value="<?php echo$displayfirstname; ?> " name="firstname" required> <br>
 
     <label><b>Last Name</b></label><br>
 
-    <input type="text" value="<?php echo$diplaysurname; ?> " name="surname" required> <br>
+    <input type="text" value="<?php echo$displaysurname; ?> " name="surname" required> <br>
 
 
     <label><b> Confirm Date of Birth</b></label><br>

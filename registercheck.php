@@ -67,10 +67,15 @@ VALUES ('[DEFAULT]', '$username', '$_POST[firstname]', '$_POST[surname]','$_POST
  
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
+    echo "New record created successfully <br />\n";
+
+    echo "<a href = loginscreen.php> Login</a> <br />\n";
+
+    }
+ else
+  {
     echo "Error: " . $sql . "<br>" . $conn->error;
-}
+  }
 
 $conn->close();
 ?>

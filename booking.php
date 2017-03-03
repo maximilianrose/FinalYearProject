@@ -50,7 +50,12 @@ VALUES ('[DEFAULT]', '$_SESSION[storedID]', '$vehicleID', '$_SESSION[start]','$_
  
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    
+echo "Thanks for booking with Max's Vehicle Hire <br />\n";
+     echo "<a href = index.php> Home </a> <br />\n" ;
+
+
+
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

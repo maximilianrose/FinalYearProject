@@ -22,19 +22,25 @@ if (isset($_SESSION['storedusername']))
 {
 $sessionusername = $_SESSION['storedusername'];
 
-echo "Hello $sessionusername";
+echo "Hello $sessionusername <br />\n";
+
+echo "<a href = logout.php> Logout</a> <br />\n" ;
 }
 
 else
 {
 
-  echo "Not logged in";
+  echo "Not logged in <br/>\n";
+
+date_default_timezone_set("Europe/London");
+echo "The time is " . date("h:ia");
+
 }
 
 
-
-
+ 
 ?>
+
 
 
 <header>
@@ -184,13 +190,13 @@ else
   
 <div>
 
-<form action="searchcheck.php" method="get">
+<form action="motorcyclesearchcheck.php" method="post">
        <label class = "selectTag"> Location </label>
-  <select name="Site">
+  <select name="bikesiteID">
     <option value="leicester">Any</option>
-    <option value="leicester">Leicester</option>
-    <option value="derby">Derby</option>
-    <option value="nottingham">Nottingham</option>
+    <option value= 1 >Leicester</option>
+    <option value= 2 >Derby</option>
+    <option value= 3 >Nottingham</option>
     
   </select>
   <br>
@@ -198,16 +204,16 @@ else
 
 
        <label class = "selectTag"> Make </label>
-  <select name="Make">
+  <select name="bikemake">
     <option value="any">Any</option>
-    <option value="ducati">Ducati</option>
-    <option value="honda">Honda</option>
-    <option value="kawasaki">Kawasaki</option>
-    <option value="peugeot">Peugeot</option>
-    <option value="piaggio">Piaggio</option>
-    <option value="suzuki">Suzuki</option>
-    <option value="triumph">Triumph</option>
-    <option value="yamaha">Yamaha</option>
+    <option value="Ducati">Ducati</option>
+    <option value="Honda">Honda</option>
+    <option value="Kawasaki">Kawasaki</option>
+    <option value="Peugeot">Peugeot</option>
+    <option value="Piaggio">Piaggio</option>
+    <option value="Suzuki">Suzuki</option>
+    <option value="Triumph">Triumph</option>
+    <option value="Yamaha">Yamaha</option>
 
 
   </select>
@@ -308,13 +314,13 @@ else
     <h2>Find Vans</h2>
 
     <div>
-<form action="searchcheck.php" method="get">
+<form action="vansearchcheck.php" method="post">
        <label class = "selectTag"> Location </label>
-  <select name="Site">
+  <select name="vansiteID">
     <option value="any">Any</option>
-    <option value="leicester">Leicester</option>
-    <option value="derby">Derby</option>
-    <option value="nottingham">Nottingham</option>
+    <option value= 1>Leicester</option>
+    <option value= 2>Derby</option>
+    <option value= 3>Nottingham</option>
     
   </select><br>
 
@@ -322,12 +328,12 @@ else
     
      
 <label class = "selectTag"> Make </label>
-  <select name="Make">
+  <select name="vanmake">
     <option value="any">Any</option>
-    <option value="ford">Ford</option>
-    <option value="renault">Renault</option>
-    <option value="citroen">Citroen</option>
-    
+    <option value="Ford">Ford</option>
+    <option value="Renault">Renault</option>
+    <option value="Citroen">Citroen</option>
+    <option value="Peugeot">Peugeot</option>
 
 
 
@@ -378,13 +384,13 @@ else
     <h2>Find Bikes</h2>
 
 <div>
-<form action="searchcheck.php" method="get">
+<form action="pedalsearchcheck.php" method="post">
        <label class = "selectTag"> Location </label>
-  <select name="Site">
+  <select name="pedalsiteID">
     <option value="any">Any</option>
-    <option value="leicester">Leicester</option>
-    <option value="derby">Derby</option>
-    <option value="nottingham">Nottingham</option>
+    <option value= 1>Leicester</option>
+    <option value= 2>Derby</option>
+    <option value= 3>Nottingham</option>
     
   </select><br>
 
@@ -392,10 +398,10 @@ else
     
      
 <label class = "selectTag"> Category </label>
-  <select name="Make">
-    <option value="mountain">Mountain</option>
-    <option value="road">Road</option>
-    <option value="bmx">BMX</option>
+  <select name="pedalcategory">
+    <option value="Mountain">Mountain</option>
+    <option value="Road">Road</option>
+    <option value="BMX">BMX</option>
     
     
 

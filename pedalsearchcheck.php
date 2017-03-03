@@ -35,11 +35,11 @@ else
   die();
 }
 
- $make = $_POST['make'];
- $seats =$_POST['seats'];
- $siteID =$_POST['siteID'];
- $enddate=$_POST['carend'];
- $startdate=$_POST['carstart'];
+ 
+ $category =$_POST['pedalcategory'];
+ $siteID =$_POST['pedalsiteID'];
+ $enddate=$_POST['bikeend'];
+ $startdate=$_POST['bikestart'];
  $carend = date_create("$enddate");
  $carstart = date_create("$startdate");
 $diff = date_diff($carstart, $carend);
@@ -92,8 +92,8 @@ echo $diff->format(" you are booking for %R%a days");
 
 
 
-$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE MANUFACTURER = '$make' AND SEATS = '$seats' AND siteID = '$siteID'  AND VEHICLETYPE = 'car' AND not exists ( select * from bookings 
-where vehicle.vehicleID = bookings.vehicleID AND STARTDATE < '$_POST[carend]' AND ENDDATE > '$_POST[carstart]') ";
+$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE  siteID = '$siteID' AND CATEGORY = '$category'  AND VEHICLETYPE = 'bike' AND not exists ( select * from bookings 
+where vehicle.vehicleID = bookings.vehicleID AND STARTDATE < '$_POST[bikeend]' AND ENDDATE > '$_POST[bikestart]') ";
 
 
 $result = $conn->query($sql);
