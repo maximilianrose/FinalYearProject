@@ -25,6 +25,9 @@ $sessionusername = $_SESSION['storedusername'];
 echo "Hello $sessionusername <br />\n";
 
 echo "<a href = logout.php> Logout</a> <br />\n" ;
+
+echo "<a href = cancel.php> Need to cancel a booking?</a> <br />\n" ;
+
 }
 
 else
