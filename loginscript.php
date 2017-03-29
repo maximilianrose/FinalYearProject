@@ -41,11 +41,17 @@ while ($row = $result->fetch_assoc()) {
   else {
 
   
-    echo "login failed";
+    echo "login failed <br/>\n";
+    echo "<a href = loginscreen.php> Try Again</a> <br />\n" ;
     exit();
 
 
     }
+
+
+
+
+    
 
 
  

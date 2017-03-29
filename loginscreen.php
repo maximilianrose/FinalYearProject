@@ -90,7 +90,7 @@ else
   <label for="tab4"   class= "loginnavigation" ><i class="fa fa-cut"></i><span> Delete account</span></label>
 
   <section id="content1" class="tab-content">
-    <h2> Login</h2>
+    <h2 class="tabheader"> Login</h2>
 
 <form class = "loginform" action="http://localhost/loginscript.php" method="post">
 
@@ -112,7 +112,7 @@ else
    
    
    
-    <input id="checkbox1"   type="checkbox" checked="checked"> <label for="checkbox1" > Remember me </label> <br>
+    <!--<input id="checkbox1"   type="checkbox" checked="checked"> <label for="checkbox1" > Remember me </label> <br>-->
   
 
 </form>
@@ -129,7 +129,7 @@ else
   
   
   <section id="content2" class="tab-content">
-    <h2> Register</h2>
+    <h2 class="tabheader"> Register</h2>
 
 <div>
 
@@ -163,10 +163,10 @@ else
 
 
 <input type ="hidden" name = "carlicence" value = "0">
-<input type ="checkbox" name = "carlicence" value = "1"> I have a full car licence <br>
+<input type ="checkbox" name = "carlicence" value = "1"> I have a full car licence <br><br>
 
 <input type ="hidden" name = "bikelicence" value ="0">
-<input type ="checkbox" name = "bikelicence" value ="1"> I have a full motorcycle licence <br><br>
+<input type ="checkbox" name = "bikelicence" value ="1"> I have a full bike licence <br><br>
 
 
  <label><b>Desired Password</b></label>  <br>
@@ -193,7 +193,7 @@ else
 
 
   <section id="content3" class="tab-content">
-    <h2> Update Details</h2>
+    <h2 class="tabheaderlong"> Update Details</h2>
 
 <div>
 
@@ -259,7 +259,7 @@ while ($row = $result->fetch_assoc()) {
 <input type ="checkbox" name = "carlicence" value = "1"> I have a full car licence <br>
 
 <input type ="hidden" name = "bikelicence" value ="0">
-<input type ="checkbox" name = "bikelicence" value ="1"> I have a full motorcycle licence <br><br>
+<input type ="checkbox" name = "bikelicence" value ="1"> I have a full bike licence <br><br>
 
 
  <label><b>Enter New Password</b></label>  <br>
@@ -285,7 +285,7 @@ while ($row = $result->fetch_assoc()) {
 
 
 <section id="content4" class="tab-content">
-    <h2> Delete account</h2>
+    <h2 class="tabheaderlong">Delete Account</h2>
 
 <div>
 

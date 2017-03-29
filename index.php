@@ -47,7 +47,7 @@ echo "The time is " . date("h:ia");
 
 
 <header>
-  <h1>Max's Vehicle Rental</h1>
+  <h2 class= "mainheader">Max's Vehicle Rental</h1>
 
   
 
@@ -56,6 +56,10 @@ echo "The time is " . date("h:ia");
 
 
 </header>
+
+<br>
+<br>
+<br>
 
 
 <div>
@@ -84,13 +88,13 @@ echo "The time is " . date("h:ia");
 
   <!--content for tab 1-->
   <section id="content1" class="tab-content">
-    <h2> Find Cars</h2>
+    <h2 class="tabheader"> Find Cars</h2>
 
 <div>
 <form action="carsearchcheck.php" method="post">
        <label class = "selectTag"> Location </label>
   <select name="siteID">
-    <option value="any">Any</option>
+    
     <option value= 1>Leicester</option>
     <option value= 2>Derby</option>
     <option value= 3>Nottingham</option>
@@ -102,7 +106,7 @@ echo "The time is " . date("h:ia");
     
 <label class = "selectTag"> Make </label>
   <select name="make" >
-    <option value="IS NOT NULL">Any</option>
+    
     <option value="Hyundai">Hyundai</option>
     <option value="Subaru">Subaru</option>
     <option value="Fiat">Fiat</option>
@@ -111,32 +115,24 @@ echo "The time is " . date("h:ia");
     <option value="Mercedes">Mercedes</option>
     <option value="Lexus">Lexus</option>
     <option value="KIA">KIA</option>
-    <option value="Suzuki">suzuki</option>
+    <option value="Suzuki">Suzuki</option>
     <option value="Toyota">Toyota</option>
     <option value="Seat">SEAT</option>
-
-
+    <option value="BMW">BMW</option>
+    <option value="Smart">Smart</option>
 
   </select>
   <br>
   <input type="submit">
 
       
-       <label class = "selectTag"> Size </label>
-  <select name="size">
-    <option value="any">Any</option>
-    <option value="small">Small</option>
-    <option value="medium">Medium</option>
-    <option value="large">Large</option>
-    
+       
 
-  </select>
 
-<br>
 
 <label class = "selectTag"> Number of seats </label>
   <select name="seats">
-    <option value="any">Any</option>
+    
     <option value= 2>2</option>
     <option value= 3 >3</option>
     <option value= 5>5</option>
@@ -146,17 +142,8 @@ echo "The time is " . date("h:ia");
 
   <br>
 
-<label class = "selectTag"> Category </label>
-  <select name="category">
-    <option value="any">Any</option>
-    <option value="small">Sports</option>
-    <option value="small economy">Small Economy</option>
-    <option value="Family">Family</option>
-    <option value="Luxury">Luxury</option>
 
-  </select>
-  <br>
-  <br>
+  
 
 
 <label><b>Start Date</b></label><br>
@@ -189,14 +176,14 @@ echo "The time is " . date("h:ia");
 
   <!--content for tab 2-->
   <section id="content2" class="tab-content">
-    <h2>Find Motorcycles </h2>
+    <h2 class="tabheaderlong"> Find Motorcycles </h2>
   
 <div>
 
 <form action="motorcyclesearchcheck.php" method="post">
        <label class = "selectTag"> Location </label>
   <select name="bikesiteID">
-    <option value="leicester">Any</option>
+    
     <option value= 1 >Leicester</option>
     <option value= 2 >Derby</option>
     <option value= 3 >Nottingham</option>
@@ -208,7 +195,7 @@ echo "The time is " . date("h:ia");
 
        <label class = "selectTag"> Make </label>
   <select name="bikemake">
-    <option value="any">Any</option>
+    
     <option value="Ducati">Ducati</option>
     <option value="Honda">Honda</option>
     <option value="Kawasaki">Kawasaki</option>
@@ -217,17 +204,17 @@ echo "The time is " . date("h:ia");
     <option value="Suzuki">Suzuki</option>
     <option value="Triumph">Triumph</option>
     <option value="Yamaha">Yamaha</option>
-
+    <option value="BMW">BMW</option>
 
   </select>
 <br>
 
  <label class = "selectTag"> Engine Size Min </label>
   <select name="enginemin">
-    <option value="any">Any</option>
+    <option value= 0 >Any </option>
     <option value= 100> 100cc   </option>
-    <option value= 200>200 </option>
-    <option value= 300>300</option>
+    <option value= 200>200cc </option>
+    <option value= 300>300cc</option>
     <option value= 400> 400cc </option>
     <option value= 500>500cc</option>
     <option value= 600>600cc</option>
@@ -241,7 +228,7 @@ echo "The time is " . date("h:ia");
 
 <label class = "selectTag"> Engine Size Max </label>
   <select name="enginemax">
-    <option value="any">Any</option>
+    <option value= 10000>Any</option>
 
     <option value= 100> &lt; 100cc   </option>
     <option value= 200> 200cc</option>
@@ -267,29 +254,13 @@ echo "The time is " . date("h:ia");
 
 
 
-
-
-
-<label class = "selectTag"> Category </label>
-  <select name="engine">
-    <option value="any"> Any  </option>
-    <option value="custom cruiser">Customer Cruiser</option>
-    <option value="dual-sport"> Dual-Sport  </option>
-    <option value="enduro">Enduro</option>
-    <option value="scooter">Scooter</option>
-    <option value="sports">Sports</option>
-    <option value="sports-touring"> Sports-Touring</option>
-
-    
-    
-    
-    
-
-
-  </select>
-
 <br>
 <br>
+
+
+
+
+
 
 <label><b>Start Date</b></label><br>
 
@@ -314,13 +285,13 @@ echo "The time is " . date("h:ia");
 
   <!--content for tab 3-->
   <section id="content3" class="tab-content">
-    <h2>Find Vans</h2>
+    <h2 class="tabheader">Find Vans</h2>
 
     <div>
 <form action="vansearchcheck.php" method="post">
        <label class = "selectTag"> Location </label>
   <select name="vansiteID">
-    <option value="any">Any</option>
+    
     <option value= 1>Leicester</option>
     <option value= 2>Derby</option>
     <option value= 3>Nottingham</option>
@@ -332,7 +303,7 @@ echo "The time is " . date("h:ia");
      
 <label class = "selectTag"> Make </label>
   <select name="vanmake">
-    <option value="any">Any</option>
+    
     <option value="Ford">Ford</option>
     <option value="Renault">Renault</option>
     <option value="Citroen">Citroen</option>
@@ -347,10 +318,10 @@ echo "The time is " . date("h:ia");
       
        <label class = "selectTag"> Storage Capacity </label>
   <select name="size">
-    <option value="any">Any</option>
-    <option value="small">Small</option>
-    <option value="medium">Medium</option>
-    <option value="large">Large</option>
+    <option value= 10000>Any</option>
+    <option value= 200 > Up to Small</option>
+    <option value= 300> Up to Medium</option>
+    <option value= 400> Up to Large</option>
 
 
     
@@ -384,13 +355,13 @@ echo "The time is " . date("h:ia");
 
 
   <section id="content4" class="tab-content">
-    <h2>Find Bikes</h2>
+    <h2 class="tabheader">Find Bikes</h2>
 
 <div>
 <form action="pedalsearchcheck.php" method="post">
        <label class = "selectTag"> Location </label>
   <select name="pedalsiteID">
-    <option value="any">Any</option>
+    
     <option value= 1>Leicester</option>
     <option value= 2>Derby</option>
     <option value= 3>Nottingham</option>

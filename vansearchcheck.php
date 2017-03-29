@@ -36,7 +36,7 @@ else
 }
 
  $make = $_POST['vanmake'];
- 
+ $storage = $_POST['size'];
  $siteID =$_POST['vansiteID'];
  $enddate=$_POST['vanend'];
  $startdate=$_POST['vanstart'];
@@ -92,7 +92,7 @@ echo $diff->format(" you are booking for %R%a days");
 
 
 
-$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE MANUFACTURER = '$make'  AND siteID = '$siteID'  AND VEHICLETYPE = 'van' AND not exists ( select * from bookings 
+$sql = "SELECT MANUFACTURER,  MODEL , DAILYPRICE, vehicleID  FROM vehicle WHERE MANUFACTURER = '$make'  AND siteID = '$siteID' AND STORAGESPACE < '$storage'  AND VEHICLETYPE = 'van' AND not exists ( select * from bookings 
 where vehicle.vehicleID = bookings.vehicleID AND STARTDATE < '$_POST[vanend]' AND ENDDATE > '$_POST[vanstart]') ";
 
 
