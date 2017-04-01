@@ -26,7 +26,7 @@ sleep(1);
 
    
  $sql = "DELETE FROM customer WHERE customerID= $customerID";
- 
+ $sql = "DELETE FROM bookings WHERE customerID= $customerID";
 /* $sql = "UPDATE customer SET FIRSTNAME = '$_POST[firstname]' , SURNAME='$_POST[surname]' , DATEOFBIRTH ='$_POST[dob]' ,  EMAIL ='$EMAIL',  CARLICENCE = '$_POST[carlicence]', MOTORCYCLELICENCE = '$_POST[bikelicence]', PASSWORD ='$hashed_password'  WHERE customerID =$customerID";
  VALUES  '$username', '$_POST[firstname]', '$_POST[surname]','$_POST[dob]', '$EMAIL', '$_POST[carlicence]', '$_POST[bikelicence]', '$hashed_password')"; */
  

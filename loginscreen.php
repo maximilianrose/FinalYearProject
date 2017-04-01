@@ -198,7 +198,8 @@ else
 <div>
 
 <?php
-
+if (isset($_SESSION['storedID']))
+{
 
 $sql = "SELECT USERNAME,  FIRSTNAME , SURNAME, EMAIL, DATEOFBIRTH  FROM customer WHERE customerID = '$sessionusername'";
 $result = $conn->query($sql);
@@ -221,7 +222,7 @@ while ($row = $result->fetch_assoc()) {
 }
 
 }
-
+}
 ?>
 
 
@@ -289,7 +290,7 @@ while ($row = $result->fetch_assoc()) {
 
 <div>
 
-<form class = "loginform" action="http://localhost/deleteaccount.php" method="post">
+<form class = "loginform" action="http://localhost/deleteaccount.php"  onclick= "return confirm('Are you sure?')"         method="post">
 
   
     
